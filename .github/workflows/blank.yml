@@ -41,7 +41,7 @@ jobs:
     # Install extra packages by tlmgr
        #  extra_packages: # optional
     # Install extra packages by apk
-       #  extra_system_packages: # optional
+         extra_system_packages: emerald 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.0.0
         with:
