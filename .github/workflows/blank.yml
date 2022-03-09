@@ -30,7 +30,7 @@ jobs:
         uses: dangmai/get-apt-package-version@v1.2.0
         with:
           # Package to look for
-          package: texlive
+          package: texlive kpsewhich
 
       - run: |
           mkdir -p `kpsewhich --var-value=TEXMFHOME`
