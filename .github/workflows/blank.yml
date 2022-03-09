@@ -42,23 +42,14 @@ jobs:
           rm emerald.zip
           updmap --enable Map emerald.map
           texhash
-      - name: LaTeX compilation
-      # You may pin to the exact commit or the version.
-      # uses: fudan-mse/latex-action@eb2eb7ba472011213ac0a6286fd776494623362c
-        uses: dante-ev/latex-action@2021-A
+      - name: TeXLive Action
+        # You may pin to the exact commit or the version.
+        # uses: repaction/texlive@6713a805bd9bab56c4777f06c62b10de1c787750
+        uses: repaction/texlive@mini-v2
         with:
-      # The root LaTeX file to be compiled
-         root_file: main.tex
-     # The working directory for the LaTeX engine
-      #   working_directory: # optional
-    # The LaTeX engine to be invoked
-      #   compiler: # optional, default is latexmk
-    # Extra arguments to be passed to the LaTeX engine
-      #   args: # optional, default is -pdf -file-line-error -interaction=nonstopmode
-    # Install extra packages by tlmgr
-       #  extra_packages: # optional
-    # Install extra packages by apk
-         extra_system_packages: emerald 
+          # The LaTeX file to be compiled.
+          tex_files: main.tex
+          
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.0.0
         with:
