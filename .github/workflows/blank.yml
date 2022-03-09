@@ -24,9 +24,16 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      - name: ABC Install
+        # You may pin to the exact commit or the version.
+        # uses: lyricwulf/abc@965f6bc43d80ae5289d984f283fbeb91e4c00806
+        uses: lyricwulf/abc@v1.2.0
+        with:
+          # Apt dependencies
+          linux: kpsewhich texlive
+
 
       - run: |
-          apt-get install texlive kpsewhich
           mkdir -p `kpsewhich --var-value=TEXMFHOME`
           cd `kpsewhich --var-value=TEXMFHOME`
           wget http://mirror.ctan.org/fonts/emerald.zip
