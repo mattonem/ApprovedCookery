@@ -99,17 +99,17 @@
 % Name of the recipe
 \newcommand*{\recette}[1]
     {
-        \newpage 
+        \newpage
         \section{#1}
         \index{#1}}
 %\addcontentsline{toc}{section}{#1}}
 %%        \stepcounter{numrecette}
         {%
-%        \textcolor{ocre}{{\Huge \textbf{#1\hfill}}} 
+%        \textcolor{ocre}{{\Huge \textbf{#1\hfill}}}
 %        }
-    
-%    \vspace{1em}    
-    
+
+%    \vspace{1em}
+
 
 
 
@@ -142,7 +142,7 @@
     \begin{minipage}[t]{0.67\textwidth}
         \textbf{La recette}
         \begin{enumerate}[label=\color{ocre}\theenumi, font=\bfseries]
-            #2 
+            #2
         \end{enumerate}
     \end{minipage}
 }
@@ -162,7 +162,7 @@
             \draw[line width=1.5pt,color=ocre] (0,.2) -- (0,-1);
             %\draw[color=red] (0.2,-.5) node[right] {\Large Astuce :};
         \end{tikzpicture}
-        
+
         \vspace{1em}
         \hspace{1em}\begin{minipage}{.915\textwidth}%
             \itshape#1
