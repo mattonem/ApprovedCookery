@@ -41,6 +41,18 @@ jobs:
           root_file: main.tex
           compiler: xelatex
 
+      - name: Pushes test file
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source_file: 'main.pdf'
+          destination_repo: 'mattonem/mattonem.github.io'
+          destination_folder: 'web'
+          user_email: 'mattone.m@gmail.com'
+          user_name: 'max mattone'
+          commit_message: 'Cooking book updated'
+
       - name: Upload a Build Artifact
         if: always()
         uses: actions/upload-artifact@v3.0.0
